@@ -42,8 +42,7 @@ async def workout_recommender(goal: FitnessTarget) -> WeeklyWorkout:
             messages=[{"role": "user", "content": instructions}]
         )
 
-        plan_text = reply.candidates[0].content.parts[0].text.strip()
-        
+        plan_text = reply.choices[0].message.content.strip()        
 
         return WeeklyWorkout(routine=plan_text)
 

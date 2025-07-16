@@ -40,8 +40,7 @@ async def tracker(ctx: RunContextWrapper, data: HealthLog) -> str:
             messages=[{"role": "user", "content": message}]
         )
 
-        summary = reply.candidates[0].content.parts[0].text.strip()
-        
+        summary = reply.choices[0].message.content.strip()        
 
         return summary
 
