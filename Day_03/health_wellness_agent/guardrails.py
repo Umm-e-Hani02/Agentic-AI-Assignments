@@ -1,8 +1,6 @@
 from agents import GuardrailFunctionOutput, RunContextWrapper, Agent, input_guardrail, output_guardrail
 from typing import Union, List
 
-
-# ⛔️ Don't decorate this yet
 async def _raw_input_safety_check(
     ctx: RunContextWrapper, agent: Agent, input: Union[str, List]
 ) -> GuardrailFunctionOutput:
@@ -30,8 +28,6 @@ async def _raw_input_safety_check(
         tripwire_triggered=False
     )
 
-
-# 🧠 Sensitive keywords
 SENSITIVE_KEYWORDS = [
     "suicide", "end my life", "kill myself", "depressed", "i want to die",
     "self harm", "hurt myself", "i give up", "no reason to live"
